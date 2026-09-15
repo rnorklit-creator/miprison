@@ -6,18 +6,30 @@ const showToast = (message) => {
 };
 
 document.querySelector("[data-copy-ip]").addEventListener("click", async (event) => {
+  openPlayModal();
+});
+document.querySelector("[data-close-play]").addEventListener("click", () => {
+  playModal.classList.remove("open");
+  playModal.setAttribute("aria-hidden", "true");
+});
+document.querySelector("[data-copy-modal-ip]").addEventListener("click", async (event) => {
   try {
-    await navigator.clipboard.writeText("play.miprison.dk");
-    event.currentTarget.innerHTML = "IP kopieret <span>✓</span>";
-    showToast("Server-IP kopieret: play.miprison.dk");
-    window.setTimeout(() => { event.currentTarget.innerHTML = "Spil nu <span>→</span>"; }, 2200);
+    await navigator.clipboard.writeText(serverIp);
+    event.currentTarget.textContent = "✓";
+    showToast(`IP kopieret: ${serverIp}`);
   } catch {
-    showToast("Forbind til play.miprison.dk");
+    showToast(`Kopiér IP: ${serverIp}`);
   }
 });
 
 const modal = document.querySelector("#login-modal");
 const ownerModal = document.querySelector("#owner-modal");
+const playModal = document.querySelector("#play-modal");
+const serverIp = "stammers-shinedown.tun.ply.gg";
+const openPlayModal = () => {
+  playModal.classList.add("open");
+  playModal.setAttribute("aria-hidden", "false");
+};
 document.querySelectorAll("[data-open-login]").forEach((button) => button.addEventListener("click", () => {
   modal.classList.add("open");
   modal.setAttribute("aria-hidden", "false");
@@ -80,7 +92,10 @@ document.querySelectorAll("[data-application-action]").forEach((button) => butto
 
 document.querySelector("#application-form").addEventListener("submit", (event) => {
   event.preventDefault();
-  event.currentTarget.querySelector(".form-message").textContent = "Tak! Din ansøgning er klar til at blive sendt.";
+  const form = event.currentTarget;
+  const formData = new FormData(form);
+  form.querySelector(".form-message").textContent = `Ansøgningen fra ${formData.get("minecraft")} er sendt til teamet.`;
+  showToast("Ansøgningen er sendt — du får svar på Discord.");
   event.currentTarget.reset();
 });
 
