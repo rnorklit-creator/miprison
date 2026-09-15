@@ -25,6 +25,8 @@ document.querySelector("[data-copy-modal-ip]").addEventListener("click", async (
 const modal = document.querySelector("#login-modal");
 const ownerModal = document.querySelector("#owner-modal");
 const playModal = document.querySelector("#play-modal");
+const reviewModal = document.querySelector("#application-review-modal");
+const checkoutModal = document.querySelector("#checkout-modal");
 const serverIp = "stammers-shinedown.tun.ply.gg";
 const openPlayModal = () => {
   playModal.classList.add("open");
@@ -86,9 +88,53 @@ document.querySelector("[data-logout]").addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 document.querySelectorAll("[data-application-action]").forEach((button) => button.addEventListener("click", () => {
-  button.textContent = "Åbnet ✓";
-  showToast("Ansøgningen er åbnet i demo-visning.");
+  document.querySelector("#review-title").textContent = `${button.dataset.applicant} søger`;
+  document.querySelector("#review-summary").textContent = `${button.dataset.role} · Minecraft-navn: ${button.dataset.applicant} · Skal gennemgås før adgang`;
+  reviewModal.dataset.sourceButton = button.dataset.applicant;
+  reviewModal.classList.add("open");
+  reviewModal.setAttribute("aria-hidden", "false");
 }));
+
+document.querySelector("[data-close-review]").addEventListener("click", () => {
+  reviewModal.classList.remove("open");
+  reviewModal.setAttribute("aria-hidden", "true");
+});
+document.querySelectorAll("[data-review-decision]").forEach((button) => button.addEventListener("click", () => {
+  const source = document.querySelector(`[data-applicant="${reviewModal.dataset.sourceButton}"]`);
+  source.textContent = button.dataset.reviewDecision === "accepted" ? "Accepteret ✓" : "Afvist ✓";
+  source.disabled = true;
+  source.classList.add(button.dataset.reviewDecision === "accepted" ? "accepted" : "denied");
+  reviewModal.querySelector(".form-message").textContent = button.dataset.reviewDecision === "accepted"
+    ? "Ansøgningen er accepteret. Adgang skal stadig oprettes separat af Owner."
+    : "Ansøgningen er afvist. Ingen adgang er givet.";
+}));
+
+document.querySelectorAll("[data-product]").forEach((button) => button.addEventListener("click", () => {
+  if (button.dataset.points === "0") {
+    document.querySelector("#ansogninger").scrollIntoView({ behavior: "smooth" });
+    showToast("Builder kræver en almindelig ansøgning.");
+    return;
+  }
+  document.querySelector("#checkout-item").textContent = `${button.dataset.product} · Version 1.21.11`;
+  document.querySelector("#checkout-price").textContent = `${button.dataset.points} Discord Points`;
+  checkoutModal.classList.add("open");
+  checkoutModal.setAttribute("aria-hidden", "false");
+}));
+document.querySelector("[data-close-checkout]").addEventListener("click", () => {
+  checkoutModal.classList.remove("open");
+  checkoutModal.setAttribute("aria-hidden", "true");
+});
+document.querySelector("[data-confirm-purchase]").addEventListener("click", (event) => {
+  const discord = document.querySelector("#checkout-discord");
+  const message = checkoutModal.querySelector(".form-message");
+  if (!discord.value.trim()) {
+    discord.focus();
+    message.textContent = "Skriv dit Discord-navn først.";
+    return;
+  }
+  message.textContent = "Demo-betaling oprettet. Discord-botten skal bekræfte pointene.";
+  event.currentTarget.disabled = true;
+});
 
 document.querySelector("#application-form").addEventListener("submit", (event) => {
   event.preventDefault();
