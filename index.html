@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="MI Prison - Danmarks næste Minecraft Prison-server." />
+    <title>MI Prison | Minecraft Prison</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="announcement">⛏️ Sæson 1 er live — join <strong>play.miprison.dk</strong> og start din rejse</div>
+
+    <header class="site-header">
+      <a class="brand" href="#forside" aria-label="MI Prison forside">
+        <img src="assets/logo.png" alt="MI Prison logo" />
+        <span>MI <b>PRISON</b></span>
+      </a>
+      <button class="menu-toggle" aria-label="Åbn menu">☰</button>
+      <nav class="main-nav" aria-label="Hovednavigation">
+        <a href="#forside">Forside</a>
+        <a href="#spil">Sådan spiller du</a>
+        <a href="#ranks">Ranks</a>
+        <a href="#ansogninger">Ansøgninger</a>
+        <a href="#regler">Regler</a>
+        <a href="#discord">Discord</a>
+      </nav>
+      <button class="login-button" data-open-login>Log ind <span>↗</span></button>
+    </header>
+
+    <main>
+      <section class="hero" id="forside">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="pulse"></span> SERVEREN ER ONLINE</p>
+          <h1>Byg din vej<br />til <em>frihed.</em></h1>
+          <p class="hero-text">Mine. Kæmp. Dominer. MI Prison er en dansk Minecraft Prison-oplevelse, hvor kun de stærkeste slipper fri.</p>
+          <div class="hero-actions">
+            <button class="primary-button" data-copy-ip>Spil nu <span>→</span></button>
+            <a class="ghost-button" href="#spil">Se hvordan det virker <span>↓</span></a>
+          </div>
+          <div class="server-meta">
+            <div><span class="status-dot"></span><strong>Online</strong><small>Serverstatus</small></div>
+            <div><strong>1.8 – 1.21+</strong><small>Versioner</small></div>
+            <div><strong id="player-count">127</strong><small>Spillere online</small></div>
+          </div>
+        </div>
+        <div class="hero-art">
+          <div class="art-glow"></div>
+          <div class="floating-card card-top">⚡ <span><b>+250%</b><small>Mine boost</small></span></div>
+          <div class="prison-tower"><div class="tower-light"></div><div class="tower-window window-one"></div><div class="tower-window window-two"></div><div class="tower-window window-three"></div></div>
+          <div class="floating-card card-bottom">🏆 <span><b>Sæson 1</b><small>Lev legenden</small></span></div>
+        </div>
+      </section>
+
+      <section class="ticker"><span>NYT</span><p>Velkommen til MI Prison — byg din arv, klatr på ranglisten og bliv den næste legende.</p><a href="#discord">Læs mere →</a></section>
+
+      <section class="section" id="spil">
+        <div class="section-heading"><div><p class="eyebrow">DIN REJSE BEGYNDER HER</p><h2>Fra fange til <em>fri.</em></h2></div><p class="section-intro">En verden fuld af muligheder. Gør dig fortjent til din frihed.</p></div>
+        <div class="steps">
+          <article class="step-card"><span class="step-number">01</span><div class="step-icon">⛏️</div><h3>Mine & tjen</h3><p>Grav dig gennem minerne, saml værdifulde materialer og tjen penge til din vej op.</p><a href="#ranks">Se minerne →</a></article>
+          <article class="step-card featured"><span class="step-number">02</span><div class="step-icon">📈</div><h3>Rank op</h3><p>Invester dine penge i nye ranks, bedre værktøj og eksklusive fordele.</p><a href="#ranks">Se ranks →</a></article>
+          <article class="step-card"><span class="step-number">03</span><div class="step-icon">👑</div><h3>Bliv legenden</h3><p>Nå toppen, vind respekt og skriv dit navn ind i MI Prisons historie.</p><a href="#discord">Mød communityet →</a></article>
+        </div>
+      </section>
+
+      <section class="section dark-section" id="ranks">
+        <div class="section-heading"><div><p class="eyebrow gold">KLASSER TIL ALLE</p><h2>Vælg din <em>fordel.</em></h2></div><a class="text-link" href="#webshop">Se alle i webshoppen →</a></div>
+        <div class="rank-grid">
+          <article class="rank-card"><span class="rank-badge iron">JERN</span><h3>Iron</h3><p>Et solidt første skridt.</p><strong>49 <small>DKK</small></strong><button data-rank="Iron">Vælg Iron</button></article>
+          <article class="rank-card silver"><span class="rank-badge">DIAMOND</span><h3>Diamond</h3><p>For dig der vil mere.</p><strong>99 <small>DKK</small></strong><button data-rank="Diamond">Vælg Diamond</button></article>
+          <article class="rank-card gold-rank"><span class="rank-badge">NETHERITE</span><h3>Netherite</h3><p>Toppen er kun begyndelsen.</p><strong>199 <small>DKK</small></strong><button data-rank="Netherite">Vælg Netherite</button></article>
+        </div>
+      </section>
+
+      <section class="section application-section" id="ansogninger">
+        <div class="application-copy"><p class="eyebrow">BLIV EN DEL AF HOLDET</p><h2>Har du det,<br /><em>der skal til?</em></h2><p>Vi leder altid efter engagerede spillere, der vil være med til at gøre MI Prison endnu bedre.</p><div class="role-list"><span>🛡️ Guard</span><span>⚙️ Staff</span><span>🧱 Builder</span></div></div>
+        <form class="application-form" id="application-form"><h3>Send en ansøgning</h3><label>Minecraft-navn<input required name="minecraft" placeholder="Dit Minecraft-navn" /></label><label>Discord-navn<input required name="discord" placeholder="navn#0000" /></label><label>Hvad søger du?<select name="role"><option>Guard / Vagt</option><option>Staff</option><option>Builder</option></select></label><label>Hvorfor skal vi vælge dig?<textarea required name="message" rows="4" placeholder="Skriv lidt om dig selv..."></textarea></label><button class="primary-button" type="submit">Send ansøgning <span>→</span></button><p class="form-message" aria-live="polite"></p><small class="form-note">Din ansøgning bliver sendt til teamet og skal godkendes, før du får nogen adgang.</small></form>
+      </section>
+
+      <section class="section info-grid" id="regler">
+        <article class="info-card"><span class="info-icon">📜</span><p class="eyebrow">SPIL FAIRT</p><h2>Regler der<br /><em>giver mening.</em></h2><p>Respekt, fairplay og god stemning. Læs reglerne før du logger ind.</p><a href="#regler">Læs reglerne →</a></article>
+        <article class="info-card discord-card" id="discord"><span class="info-icon">💬</span><p class="eyebrow">DIT COMMUNITY</p><h2>Find os på<br /><em>Discord.</em></h2><p>Få hjælp, deltag i events og mød de andre spillere.</p><a href="https://discord.gg/2jqX8Ypdy" target="_blank" rel="noreferrer">Join Discord →</a></article>
+      </section>
+
+      <section class="section dark-section webshop-section" id="webshop"><div class="section-heading"><div><p class="eyebrow gold">BLIV EN DEL AF TEAMET</p><h2>Team-roller i<br /><em>webshoppen.</em></h2></div><p class="section-intro">Køb ikke automatisk adgang: alle roller skal stadig godkendes af en Owner.</p></div><div class="shop-grid"><article class="shop-card shop-highlight"><span>🛡️</span><h3>Guard / Vagt</h3><p>Ansøg om Guard-rollen og hjælp med at holde serveren tryg.</p><strong>20 <small>DKK</small></strong><button data-rank="Guard / Vagt">Ansøg om Guard</button></article><article class="shop-card shop-highlight"><span>⚙️</span><h3>Staff</h3><p>Ansøg om Staff-rollen og hjælp communityet.</p><strong>50 <small>DKK</small></strong><button data-rank="Staff">Ansøg om Staff</button></article><article class="shop-card"><span>🧱</span><h3>Builder</h3><p>Vis dine byggeevner gennem en almindelig ansøgning.</p><strong>Gratis <small>ansøgning</small></strong><button data-rank="Builder">Start ansøgning</button></article></div></section>
+      <section class="section staff-preview" id="staff"><div><p class="eyebrow">MI PRISON TEAM</p><h2>Holdet bag<br /><em>serveren.</em></h2></div><div class="staff-roles"><span>👑 Owner</span><span>⭐ Co-Owner</span><span>🛠️ Administrator</span><span>🛡️ Staff</span></div><button class="ghost-button" data-open-login>Staff-login <span>↗</span></button></section>
+
+      <section class="section admin-console" id="admin-console"><div class="console-heading"><div><p class="eyebrow">BESKYTTET OMRÅDE</p><h2>Owner <em>Console.</em></h2><p>Et samlet kontrolpanel til serverens team og adgang.</p></div><span class="owner-pill">🔒 OWNER-ONLY</span></div><div class="console-grid"><article class="console-card"><span class="console-icon">👥</span><h3>Brugere & roller</h3><p>Opret teammedlemmer med Minecraft-navn, Discord-navn og præcis adgang.</p><div class="permission-list"><span>👑 Owner <b>Fuld adgang</b></span><span>⭐ Co-Owner <b>Team + ansøgninger</b></span><span>🛠️ Administrator <b>Drift + moderation</b></span><span>🛡️ Staff / Guard / Builder <b>Afgrænset adgang</b></span></div></article><article class="console-card"><span class="console-icon">🔑</span><h3>Opret adgang</h3><p>Kun Owner kan oprette nye Owner-, Co-Owner- eller Administrator-adgange.</p><button class="primary-button" data-open-owner-confirm>Opret teamadgang <span>→</span></button><small class="security-note">Alle ændringer logges og kræver personlig Owner-bekræftelse.</small></article></div></section>
+      <section class="section owner-dashboard" id="owner-dashboard" hidden><div class="dashboard-top"><div><p class="eyebrow">LOGGET IND SOM OWNER</p><h2>Velkommen, <em id="owner-name">Owner.</em></h2><p class="dashboard-muted">Her styrer du brugere, roller, ansøgninger og serverens sikkerhed.</p></div><button class="ghost-button" data-logout>Log ud</button></div><div class="dashboard-tabs"><button class="tab-button active" data-tab="overview">Oversigt</button><button class="tab-button" data-tab="users">Brugere & roller</button><button class="tab-button" data-tab="applications">Ansøgninger</button><button class="tab-button" data-tab="activity">Aktivitetslog</button></div><div class="dashboard-panel" data-panel="overview"><div class="metric-grid"><div><strong>127</strong><small>Spillere online</small></div><div><strong id="user-total">4</strong><small>Teammedlemmer</small></div><div><strong>3</strong><small>Nye ansøgninger</small></div><div><strong>100%</strong><small>Serverstatus</small></div></div><div class="dashboard-notice">🔒 <span><b>Owner-sikkerhed er aktiv</b><small>Rolleændringer kræver personlig bekræftelse. I produktion skal denne demo kobles til rigtig 2FA.</small></span></div></div><div class="dashboard-panel" data-panel="users" hidden><div class="panel-heading"><div><h3>Teamadgange</h3><p class="dashboard-muted">Kun Owner må oprette Owner-adgang.</p></div><button class="primary-button" data-open-owner-confirm>+ Opret bruger</button></div><div class="user-table" id="user-table"><div class="user-row user-head"><span>Bruger</span><span>Discord</span><span>Rolle</span><span>Status</span></div><div class="user-row"><span><b>MIPrisonOwner</b><small>Owner</small></span><span>owner#0001</span><span><i class="role owner">Owner</i></span><span class="online">Aktiv</span></div><div class="user-row"><span><b>BuilderMike</b><small>MikeMC</small></span><span>mike#1234</span><span><i class="role builder">Builder</i></span><span class="online">Aktiv</span></div></div></div><div class="dashboard-panel" data-panel="applications" hidden><div class="panel-heading"><div><h3>Seneste ansøgninger</h3><p class="dashboard-muted">Godkend eller afvis nye teammedlemmer.</p></div><span class="owner-pill">3 AFVENTER</span></div><div class="application-list"><div><b>RasmusFN14</b><span>Guard · Discord: rasmus#1414</span><button data-application-action>Gennemgå</button></div><div><b>AlexBuilds</b><span>Builder · Discord: alex#4421</span><button data-application-action>Gennemgå</button></div></div></div><div class="dashboard-panel" data-panel="activity" hidden><div class="panel-heading"><div><h3>Aktivitetslog</h3><p class="dashboard-muted">Sikkerhedshistorik for Owner Console.</p></div></div><div class="activity-list"><div><span>🔐</span><p><b>Owner-login</b><small>Nu · Lokal demo-session</small></p></div><div><span>👥</span><p><b>Teamoversigt åbnet</b><small>For 2 minutter siden</small></p></div><div><span>🛡️</span><p><b>Sikkerhedskontrol bestået</b><small>I dag, 18:40</small></p></div></div></div></section>
+    </main>
+
+    <footer><a class="brand" href="#forside"><img src="assets/logo.png" alt="" /><span>MI <b>PRISON</b></span></a><p>© 2025 MI Prison. Bygget af communityet.</p><div><a href="#regler">Regler</a><a href="#discord">Discord</a><a href="#ansogninger">Kontakt</a></div></footer>
+
+    <div class="modal-backdrop" id="login-modal" aria-hidden="true"><section class="login-modal" role="dialog" aria-modal="true" aria-labelledby="login-title"><button class="modal-close" data-close-login aria-label="Luk">×</button><img src="assets/logo.png" alt="MI Prison" /><p class="eyebrow">SIKKER ADGANG</p><h2 id="login-title">Log ind</h2><p class="modal-subtitle">Få adgang til din MI Prison-konto.</p><form id="login-form"><label>Brugernavn<input required name="username" autocomplete="username" placeholder="Dit brugernavn" /></label><label>Adgangskode<input required type="password" name="password" autocomplete="current-password" placeholder="••••••••" /></label><button class="primary-button" type="submit">Fortsæt <span>→</span></button><p class="form-message" aria-live="polite"></p></form><small>Demo-visning: rigtig login kræver backend og database.</small></section></div>
+    <div class="modal-backdrop" id="owner-modal" aria-hidden="true"><section class="login-modal owner-confirm-modal" role="dialog" aria-modal="true" aria-labelledby="owner-title"><button class="modal-close" data-close-owner aria-label="Luk">×</button><span class="console-icon">🔐</span><p class="eyebrow">PERSONLIG BEKRÆFTELSE</p><h2 id="owner-title">Bekræft Owner</h2><p class="modal-subtitle">Kun en allerede godkendt Owner-session må oprette nye roller. I produktion kræves 2FA på serveren.</p><label>Bekræftelsesmetode<select><option>Authenticator-app (2FA)</option><option>Sikker e-mailbekræftelse</option></select></label><button class="primary-button" data-confirm-owner>Fortsæt sikkert <span>→</span></button><p class="form-message" aria-live="polite"></p></section></div>
+    <div class="modal-backdrop" id="play-modal" aria-hidden="true"><section class="login-modal play-modal" role="dialog" aria-modal="true" aria-labelledby="play-title"><button class="modal-close" data-close-play aria-label="Luk">×</button><span class="console-icon">⛏️</span><p class="eyebrow">SERVER-IP</p><h2 id="play-title">Kom i gang</h2><p class="modal-subtitle">Kopiér IP-adressen og tilslut fra Minecraft Java Edition.</p><div class="ip-box"><code>stammers-shinedown.tun.ply.gg</code><button data-copy-modal-ip aria-label="Kopiér server-IP">⧉</button></div><p class="modal-subtitle">Version: 1.8 – 1.21+</p><a class="primary-button play-discord" href="https://discord.gg/2jqX8Ypdy" target="_blank" rel="noreferrer">Join Discord <span>↗</span></a></section></div>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
